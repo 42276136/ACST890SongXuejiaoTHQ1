@@ -1,0 +1,65 @@
+ Q1.
+> n=100
+> fibvals=numeric(n)
+> fibvals[1]=1
+> fibvals[2]=1
+> for(i in 3:n) {fibvals[i] = fibvals[i-1]+fibvals[i-2]}
+> fibvals     ## print out 100 Fibonacci numbers 
+
+
+Q3.
+(a)> dataset<- read.csv("PersonenSchaden.csv",header=TRUE,na.strings="?")
+    > dataset
+(b) > fix(dataset)
+> attach(dataset)
+> names(dataset)
+ [1] "total"    "inj1"     "inj2"     "inj3"     "inj4"    
+ [6] "inj5"     "legrep"   "accmonth" "repmonth" "finmonth"
+[11] "op_time" 
+> var(dataset$total)
+[1] 8277562110
+> sd(dataset$total)
+[1] 90981.11
+> mean(dataset$total)
+[1] 38367.22
+> summary(dataset$total)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+10    6297   13850   38370   35120 4486000
+
+(c) 
+> hist(dataset$total,breaks=30000,xlab="claim value",main="The histogram of dollar values of claims")
+
+(d) 
+>settlement_delay=dataset$finmonth-dataset$accmonth
+>hist(settlement_delay,xlab="settlement delay",ylab="frequency",main="histogram of settlement delay")
+
+(e)
+> table_legal=table(dataset$legrep)
+> table_legal
+
+    0     1 
+ 8008 14028 
+>barplot(legal_represented,xlab="0=not legally represented,1=legally represented",ylab="frequency",main="leglly represented or not vs frequency")
+
+(g)
+The histogram of dollar values of claims has a long tail, which means higher frequency of smaller claims and also has lower frequency of larger claims. The histogram of settlement delay also has a long tail, the majority of claims can be settled within 36 months, but there are some longer delayed settlements happened after 120 months.
+ (h)
+>logtotal=log(dataset$total)
+> hist(logtotal,xlab="log claim values",main="Histogram of log claim values")
+
+(i)
+> plot(dataset$op_time,dataset$total,xlab="operational time",ylab="claim size", main="operational time vs claim sizes")
+
+
+
+
+> plot(dataset$op_time,logtotal,xlab="operational time",ylab="log claim sizes",main="operational time vs log claim sizes")
+
+
+ (j)
+The histogram of log claim looks like symmetric and it looks like normal distribution with log claims concentrated between 8 and 11, and little frequency at 2 or 16. The other two plots of claim sizes or log claim sizes vs operational time both shows increasing pattern as claims and log claim sizes get larger and larger, operational time increases, which is intuitive in reality. Insurance companies usually have longer assessing time when claim amounts are high. However, the slope of log claim vs operational time is steeper than that of claim vs operational time.
+
+
+(k)
+>plot(op_time,logtotal,main="scatterplot of operational time vs log claim sizes",xlab="operational time",ylab="log claim size")
+
