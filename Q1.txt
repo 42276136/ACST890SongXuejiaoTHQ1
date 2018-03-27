@@ -1,0 +1,1 @@
+n=100fibvals=numeric(n)fibvals[1]=1fibvals[2]=1for(i in 3:n) {fibvals[i] = fibvals[i-1]+fibvals[i-2]}fibvals
