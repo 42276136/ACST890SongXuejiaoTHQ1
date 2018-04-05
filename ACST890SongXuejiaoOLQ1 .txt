@@ -1,1 +1,13 @@
-Q2Command examples:1../regurgitator.sh today is a good day2../regurgitator.sh my birthday is tomorrow3../regurgitator.sh This is a wonderful worldQ3 #!/bin/bashif [ $# -eq 1 ]thenÊ Ê Num=$1elseÊ Ê echo -n "Enter a Number :"Ê Ê read Numfif1=1f2=1echo "The Fibonacci sequence for the number $Num is : "for (( i=1;i<=Num;i++ ))doÊÊ Ê echo -n "$f1 "ÊÊ Ê fn=$((f1+f2))ÊÊ Ê f1=$f2ÊÊ Ê f2=$fndoneThis shows the script of generating a series of n Fibonacci numbers.This can be done by running the commands below:vi fibonacci.sh          ## use editor vi to edit Fibonacci_numbers.shchmod u+x fibonacci.sh         ## after finishing the script, make the file executable by running the command./fibonacci.sh      ## execute command to print out n Fibonacci numbers
+Q2
+Command examples:
+
+1.
+./regurgitator.sh today is a good day
+
+
+2.
+./regurgitator.sh my birthday is tomorrow
+
+
+3.
+./regurgitator.sh This is a wonderful world
