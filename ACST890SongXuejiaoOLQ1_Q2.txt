@@ -1,0 +1,1 @@
+Q2Command examples:1../regurgitator.sh today is a good day2../regurgitator.sh my birthday is tomorrow3../regurgitator.sh This is a wonderful world
